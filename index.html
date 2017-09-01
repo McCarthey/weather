@@ -39,7 +39,7 @@
   var url_daily = API_DAILY + "?location=" + LOCATION + "&" + str + "&callback=?";
 
   INPUT.addEventListener("change", function(){
-    LOCATION = INPUT.value.trim();
+    LOCATION = INPUT.value.trim() || "haerbin";
     //地点变化后，重构url
     url_now = API_NOW + "?location=" + LOCATION + "&" + str + "&callback=?";
     url_daily = API_DAILY + "?location=" + LOCATION + "&" + str + "&callback=?";
