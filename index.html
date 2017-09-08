@@ -1,80 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seniverse API Jsonp Test Page</title>
-  <script type="text/javascript" src="scripts/jquery.js"></script>
-  <script type="text/javascript" src="scripts/hmac-sha1.js"></script>
-</head>
-<body>
-  <input type="text" id="location">
-    <button id="submit" onclick="getInfo()">查询</button>
-  </input>
-  <div id="content">
-  </div>
-  <div id="daily"></div>
-<script>
-  /******** 本示例仅做开发参考使用，不建议在生产环境下暴露 key！ ********/
-  var UID = "UB255EAF0E"; // 测试用 用户ID，请更换成您自己的用户ID
-  var KEY = "xo8wushgoqh0si9p"; // 测试用key，请更换成您自己的 Key
-  var API_NOW = "https://api.seniverse.com/v3/weather/now.json"; // 获取天气实况
-  var API_DAILY = "https://api.seniverse.com/v3/weather/daily.json";
-  var INPUT = document.getElementById("location");
-  var LOCATION = INPUT.value.trim() || "haerbin"; // 除拼音外，还可以使用 v3 id、汉语等形式
-  // 获取当前时间戳
-  var ts = Math.floor((new Date()).getTime() / 1000);
-  // 构造验证参数字符串
-  var str = "ts=" + ts + "&uid=" + UID;
-
-  // 使用 HMAC-SHA1 方式，以 API 密钥（key）对上一步生成的参数字符串（raw）进行加密
-  // 并将加密结果用 base64 编码，并做一个 urlencode，得到签名 sig
-  var sig = CryptoJS.HmacSHA1(str, KEY).toString(CryptoJS.enc.Base64);
-  sig = encodeURIComponent(sig);
-  str = str + "&sig=" + sig;
-
-  // 构造最终请求的 url
-  var url_now = API_NOW + "?location=" + LOCATION + "&" + str + "&callback=?";
-
-  var url_daily = API_DAILY + "?location=" + LOCATION + "&" + str + "&callback=?";
-
-  INPUT.addEventListener("change", function(){
-    LOCATION = INPUT.value.trim() || "haerbin";
-    //地点变化后，重构url
-    url_now = API_NOW + "?location=" + LOCATION + "&" + str + "&callback=?";
-    url_daily = API_DAILY + "?location=" + LOCATION + "&" + str + "&callback=?";
-  });
-//getJSON方法可跨域
-function getInfo(){
-$.getJSON(url_now, function(data) {
-    var obj = document.getElementById('content');
-    var weather = data.results[0];
-
-    var text = [];
-    text.push("地点: " + weather.location.name);
-    text.push("所属: " + weather.location.path);
-    text.push("天气: " + weather.now.text);
-    text.push("温度: " + weather.now.temperature);
-    text.push("上次更新：" + weather.last_update);
-
-
-
-    obj.innerText = text.join("\n");
-}); 
-
-$.getJSON(url_daily + "&callbak=?", function(data) {
-    var obj = document.getElementById('daily');
-    var weather = data.results[0];
-
-    var text = ["\n"];
-    text.push("明天天气: "+ weather.daily[1].text_day);
-    text.push("明天温度: " + weather.daily[1].low + "~" + weather.daily[1].high);
-    text.push("后天天气: "+ weather.daily[2].text_day);
-    text.push("后天温度: " + weather.daily[2].low + "~" + weather.daily[2].high);
-
-    obj.innerText = text.join("\n"); 
-}); 
-};
-</script>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue-weather</title>
+    <script src="hmac-sha1.js"></script>
+    <!--script src="tween.js"></script-->
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="/dist/build.js"></script>
+  </body>
 </html>

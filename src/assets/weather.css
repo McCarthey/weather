@@ -1,0 +1,137 @@
+button{
+	border-radius: 4px;
+	color:#fff;
+	border: 1px solid transparent;
+	cursor: pointer;
+	line-height: 1.8rem;
+	text-align: center;
+}
+#app{
+	max-width:800px;
+	max-height: 1000px;
+	padding-bottom: 10px;
+	margin:60px auto;
+	box-shadow: 6px 6px 20px #ccc;
+}
+.title{
+	font-size:24px;
+	margin:0 10px;
+	line-height: 1.8em;
+	background: #fff;
+	color:#000;
+	text-align: center;
+	border-bottom:1px solid #eee;
+}
+.now-weather{
+	display: flex;
+	flex-direction:column;
+	align-items:center;
+}
+.daily-weather{
+	display: flex;
+	flex-direction:row;
+	justify-content:flex-start;
+}
+.daily-title{
+	width:80%;
+	text-align: center;
+	line-height: 1.8em;
+	padding: 6px;
+	border-bottom:1px solid #eee;
+}
+.tomorrow-weather,.dayAfterTomorrow-weather{
+	display: flex;
+	flex-direction:column;
+	align-items:center;
+	width: 50%;
+}
+
+.search{
+	display: inline;
+	position: relative;
+	top:10px;
+	left:10px;
+	height:36px;
+}
+.search input{
+	position:relative;
+	top:-12px;
+	margin-left:10px;
+	line-height: 1.8rem;
+	padding: 2px;
+	border-top:0;
+	border-right:0;
+	border-left:0;
+	border-bottom:1px solid #337ab3;
+}
+.search input:focus{
+	box-shadow: 1px 1px 6px #337ab3;
+}
+.btn-search{
+	width: 36px;
+	height: 36px;
+	background: url(search.svg) center no-repeat;
+	background-color: #337ab3;
+	background-size:80%;
+	border-radius: 50%;
+	transition: All 0.6s ease-in-out;
+}
+.refresh{
+	display: inline;
+	position: relative;
+	float: right;
+	top:10px;
+	right:10px;
+}
+.btn-refresh{
+	width: 36px;
+	height: 36px;
+	background: url(refresh.svg) center no-repeat;
+	background-color: #5cb85c;
+	background-size:80%;
+	border-radius: 50%;
+	transition: All 0.6s ease-in-out;
+}
+.btn-refresh:hover {
+    transform: rotate(360deg);
+}
+.btn-search:hover {
+    transform: scale(1.2);
+}
+.footer{
+	font-size: 12px;
+	color:#aaa;
+	text-align: center;
+}
+.footer a{
+	color: #aaa;
+	text-decoration: none;
+}
+.error{
+	position: relative;
+	left:10px;
+	color:#d9534f;
+	margin-top: 10px;
+}
+
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+.bounce-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+  from {
+    transform: translateX(-30%);
+    opacity: 0;
+  }to{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@media screen and (max-width:800px){
+	#app{
+		margin:0;
+		box-shadow: 0 0 0;
+	}
+}
