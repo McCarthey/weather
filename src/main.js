@@ -4,7 +4,7 @@ import App from './App.vue'
 Vue.directive('focus', {
 	//v-focus自动聚焦自定义指令
 	inserted: function(el) {
-		el.focus()
+		el.focus();
 	},
 });
 new Vue({
