@@ -70,7 +70,7 @@ button{
 .btn-search{
 	width: 36px;
 	height: 36px;
-	background: url(./search.svg) center no-repeat;
+	background: url(search.svg) center no-repeat;
 	background-color: #337ab3;
 	background-size:80%;
 	border-radius: 50%;
@@ -86,7 +86,7 @@ button{
 .btn-refresh{
 	width: 36px;
 	height: 36px;
-	background: url(./refresh.svg) center no-repeat;
+	background: url(refresh.svg) center no-repeat;
 	background-color: #5cb85c;
 	background-size:80%;
 	border-radius: 50%;
