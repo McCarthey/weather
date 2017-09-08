@@ -127,8 +127,10 @@ export default {
     },
     getInfo:function(){
       if(!this.searchClicked) return false;
-      let UID = "U785B76FC9"; // 测试用 用户ID，请更换成您自己的用户ID
-      let KEY = "4r9bergjetiv1tsd"; // 测试用key，请更换成您自己的 Key
+      //let UID = "U785B76FC9"; // 测试用  U785B76FC9  用户ID，请更换成您自己的用户ID
+      //let KEY = "4r9bergjetiv1tsd"; // 测试用 4r9bergjetiv1tsd ，请更换成您自己的 Key
+      let UID = "UB255EAF0E"; // 测试用  U785B76FC9  用户ID，请更换成您自己的用户ID
+      let KEY = "xo8wushgoqh0si9p"; // 测试用 4r9bergjetiv1tsd ，请更换成您自己的 Key
       let API_NOW = "https://api.seniverse.com/v3/weather/now.json"; // 获取天气实况
       let API_DAILY = "https://api.seniverse.com/v3/weather/daily.json";
       let LOCATION = this.location || "chengdu"; // 除拼音外，还可以使用 v3 id、汉语等形式
