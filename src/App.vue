@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+  <img src="assets/logo.png" height="200" width="200">
     <div class="title">
       {{title}}
     </div>

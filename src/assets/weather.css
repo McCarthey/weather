@@ -70,7 +70,7 @@ button{
 .btn-search{
 	width: 36px;
 	height: 36px;
-	background: url(search.png) center no-repeat;
+	background: url(search.svg) center no-repeat;
 	background-color: #337ab3;
 	background-size:80%;
 	border-radius: 50%;
