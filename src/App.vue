@@ -119,12 +119,13 @@
         console.log(e)
       }
       this.location = '';
+      let that = this
       if (window.Notification && Notification.permission !== "denied") {
         Notification.requestPermission().then(() => {
-          const n = new Notification(`${this.location}今日天气`, {
-            body: `${this.now.now.text}
-                   ${this.today.low} - ${this.today.high}℃
-                   当前温度${this.now.now.temperature}
+          const n = new Notification(`${that.location}今日天气`, {
+            body: `${that.now.now.text}
+                   ${that.today.low} - ${that.today.high}℃
+                   当前温度${that.now.now.temperature}
                   `
           });
           n.onclick = e => {
